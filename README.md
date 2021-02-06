@@ -1,4 +1,6 @@
-# Welcome to Colyseus!
+# Welcome to VoiceBlock - The First Ever RealTime Multiplayer Voice Game
+
+Follow me on twitch at https://twitch.tv/goldzulu from Monday to Friday and see me build it live on twitch.
 
 This project has been created using [⚔️ `create-colyseus-app`](https://github.com/colyseus/create-colyseus-app/) - an npm init template for kick starting a Colyseus project in TypeScript.
 
