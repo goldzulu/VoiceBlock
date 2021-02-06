@@ -2,7 +2,7 @@ import { ArraySchema, Schema, type } from "@colyseus/schema";
 
 export class Board extends Schema {
 
-  @type("number")
+  @type(["number"])
   values: number[];
 
   @type("number")
