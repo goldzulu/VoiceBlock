@@ -1,13 +1,15 @@
 {
-  "private": true,
   "name": "voice-blocks",
   "version": "1.0.0",
   "description": "voice game backend",
-  "main": "lib/index.js",
+  "main": "app/backend/index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts",
-    "loadtest": "colyseus-loadtest loadtest/example.ts --room my_room --numClients 2",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:backend": "nodemon --watch backend -e ts --exec \"ts-node backend/index.ts\"",
+    "build:backend": "tsc -p tsconfig.json",
+    "clean": "rimraf ./dist ./app",
+    "start": "concurrently --kill-others-on-fail --handle-input \"npm run start:backend\"",
+    "bundle": "npm run clean && npm run build:backend",
+    "bundlezip": "npm install && zip ../myapp.zip -r * .[^.]*"
   },
   "author": "",
   "license": "UNLICENSED",
@@ -21,7 +23,11 @@
     "@types/express": "^4.17.1",
     "ts-node": "^8.1.0",
     "ts-node-dev": "^1.0.0-pre.63",
-    "typescript": "^3.4.5"
+    "typescript": "^3.4.5",
+    "rimraf": "^3.0.2",
+    "ncp": "^2.0.0",
+    "nodemon": "2.0.4",
+    "concurrently": "5.3.0"
   },
   "dependencies": {
     "@colyseus/monitor": "^0.12.2",
