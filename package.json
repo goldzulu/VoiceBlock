@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "voice game backend",
   "main": "app/backend/index.js",
+  "engines": { "node" : "12.20.1" },
   "scripts": {
     "start:backend": "nodemon --watch backend -e ts --exec \"ts-node backend/index.ts\"",
     "build:backend": "tsc -p tsconfig.json",
@@ -11,8 +12,8 @@
     "bundle": "npm run clean && npm run build:backend",
     "bundlezip": "npm install && zip ../myapp.zip -r * .[^.]*"
   },
-  "author": "",
-  "license": "UNLICENSED",
+  "author": "voicetechguy goldzulu",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/colyseus/create-colyseus/issues"
   },
@@ -36,5 +37,9 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1"
+  },
+  "funding": {
+    "type" : "patreon",
+    "url" : "https://www.patreon.com/goldzulu"
   }
 }
